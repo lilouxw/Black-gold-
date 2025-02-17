@@ -16,8 +16,8 @@
             -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling on iOS */
         }
         #map {
-            width: 1000px; /* Adjust the width to fit the entire map */
-            height: 1000px; /* Adjust the height to fit the entire map */
+            width: 2000px; /* Adjust the width to fit the entire map */
+            height: 2000px; /* Adjust the height to fit the entire map */
             background: url('https://github.com/lilouxw/Black-gold-/raw/main/map.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
@@ -42,7 +42,7 @@
     </div>
     <script>
         function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
+            event.dataTransfer.setData("text", event.target.id);
         }
         function touchMove(event) {
             let touch = event.touches[0];
@@ -61,7 +61,7 @@ document.getElementById("map").addEventListener("drop", function(event) {
             let unit = document.getElementById(data);
             unit.style.left = event.clientX - 25 + "px";
             unit.style.top = event.clientY - 25 + "px";
-        });
+        });i
         document.getElementById("map-container").addEventListener("touchmove", function(event) {
             event.preventDefault();
             touchMove(event);
