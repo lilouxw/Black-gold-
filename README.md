@@ -41,6 +41,15 @@
             event.dataTransfer.setData("text", event.target.id);
         }
 
+        function touchMove(event) {
+            let touch = event.touches[0];
+            let element = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (element && element.classList.contains('unit')) {
+                element.style.left = touch.clientX - 25 + 'px';
+                element.style.top = touch.clientY - 25 + 'px';
+            }
+        }
+
         document.getElementById("map").addEventListener("dragover", function(event) {
             event.preventDefault();
         });
@@ -51,6 +60,11 @@
             let unit = document.getElementById(data);
             unit.style.left = event.clientX - 25 + "px";
             unit.style.top = event.clientY - 25 + "px";
+        });
+
+        document.getElementById("map").addEventListener("touchmove", function(event) {
+            event.preventDefault();
+            touchMove(event);
         });
     </script>
 </body>
