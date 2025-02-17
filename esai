@@ -12,7 +12,7 @@
         #map {
             width: 100vw;
             height: 100vh;
-            background: url('https://github.com/lilouxw/Black-gold-/raw/main/map.jpg) no-repeat center center;
+            background: url('https://github.com/lilouxw/Black-gold-/raw/main/map.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
         }
