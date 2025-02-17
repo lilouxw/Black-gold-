@@ -40,10 +40,12 @@
             <img src="player2.jpg" class="unit" style="top: 200px; left: 200px;" draggable="true" ondragstart="drag(event)" id="unit2">
         </div>
     </div>
+    
     <script>
         function drag(event) {
             event.dataTransfer.setData("text", event.target.id);
         }
+
         function touchMove(event) {
             let touch = event.touches[0];
             let element = document.elementFromPoint(touch.clientX, touch.clientY);
@@ -52,16 +54,19 @@
                 element.style.top = touch.clientY - 25 + 'px';
             }
         }
-document.getElementById("map").addEventListener("dragover", function(event) {
+
+        document.getElementById("map").addEventListener("dragover", function(event) {
             event.preventDefault();
         });
-document.getElementById("map").addEventListener("drop", function(event) {
+
+        document.getElementById("map").addEventListener("drop", function(event) {
             event.preventDefault();
             let data = event.dataTransfer.getData("text");
             let unit = document.getElementById(data);
             unit.style.left = event.clientX - 25 + "px";
             unit.style.top = event.clientY - 25 + "px";
-        });i
+        });
+
         document.getElementById("map-container").addEventListener("touchmove", function(event) {
             event.preventDefault();
             touchMove(event);
