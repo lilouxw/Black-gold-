@@ -13,6 +13,7 @@
             width: 100vw;
             height: 100vh;
             overflow: auto;
+            -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling on iOS */
         }
         #map {
             width: 2000px; /* Adjust the width to fit the entire map */
@@ -51,8 +52,7 @@
                 element.style.top = touch.clientY - 25 + 'px';
             }
         }
-
-document.getElementById("map").addEventListener("dragover", function(event) {
+        document.getElementById("map").addEventListener("dragover", function(event) {
             event.preventDefault();
         });
         document.getElementById("map").addEventListener("drop", function(event) {
