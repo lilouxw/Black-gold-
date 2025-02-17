@@ -35,7 +35,6 @@
         <img src="player1.jpg" class="unit" style="top: 100px; left: 100px;" draggable="true" ondragstart="drag(event)" id="unit1">
         <img src="player2.jpg" class="unit" style="top: 200px; left: 200px;" draggable="true" ondragstart="drag(event)" id="unit2">
     </div>
-    
     <script>
         function drag(event) {
             event.dataTransfer.setData("text", event.target.id);
